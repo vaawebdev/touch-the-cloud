@@ -44,6 +44,7 @@ setInterval(() => {
 }, 15);
 
 const listener = (clientX, clientY) => {
+  clearTimeout(timeout);
   if (
     userMousemoved ||
     (clientX < window.innerWidth / 2 + range * 4 &&
@@ -56,7 +57,6 @@ const listener = (clientX, clientY) => {
     rendered = false;
     userMousemoved = true;
     title.classList.add("hidden");
-    clearTimeout(timeout);
     timeout = setTimeout(() => {
       title.classList.remove("hidden");
       userMousemoved = false;
