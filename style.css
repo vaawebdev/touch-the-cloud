@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  border: 0;
+  outline: none;
+  font-display: swap;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
+  background-color: #edf2f4;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root h1 {
+  display: block;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  color: #2b2d42;
+  font-size: 50px;
+  font-weight: normal;
+  padding-bottom: 250px;
+  transition: all 0.5s;
+  user-select: none;
+}
+
+#root h1.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: 35px;
+  z-index: 99;
+  border-radius: 100%;
+  background-color: black;
+  transform-origin: center;
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #root h1 {
+    font-size: 35px;
+  }
+}
