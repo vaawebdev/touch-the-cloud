@@ -64,12 +64,20 @@ const listener = (clientX, clientY) => {
   }
 };
 
-root.addEventListener("mousemove", ({ clientX, clientY }) => {
-  listener(clientX, clientY);
-});
+root.addEventListener(
+  "mousemove",
+  ({ clientX, clientY }) => {
+    listener(clientX, clientY);
+  },
+  { passive: true }
+);
 
-root.addEventListener("touchmove", ({ touches }) => {
-  if (touches.length) {
-    listener(touches[0].clientX, touches[0].clientY);
-  }
-});
+root.addEventListener(
+  "touchmove",
+  ({ touches }) => {
+    if (touches.length) {
+      listener(touches[0].clientX, touches[0].clientY);
+    }
+  },
+  { passive: true }
+);
