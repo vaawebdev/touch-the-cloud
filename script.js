@@ -44,7 +44,6 @@ setInterval(() => {
 }, 15);
 
 const listener = (clientX, clientY) => {
-  clearTimeout(timeout);
   if (
     userMousemoved ||
     (clientX < window.innerWidth / 2 + range * 4 &&
@@ -52,6 +51,7 @@ const listener = (clientX, clientY) => {
       clientY < window.innerHeight / 2 + range * 2 &&
       clientY > window.innerHeight / 2 - range * 2)
   ) {
+    clearTimeout(timeout);
     coordinates["x"] = clientX;
     coordinates["y"] = clientY;
     rendered = false;

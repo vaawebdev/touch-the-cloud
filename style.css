@@ -16,6 +16,8 @@
 html,
 body {
   height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 #root {
@@ -30,7 +32,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  touch-action: none;
 }
 
 #root h1 {
@@ -52,6 +56,7 @@ body {
 
 .circle {
   position: absolute;
+  z-index: -1;
   display: block;
   width: 35px;
   height: 35px;
@@ -60,6 +65,12 @@ body {
   background-color: black;
   transform-origin: center;
   animation: bounce 1s ease infinite;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  pointer-events: none;
 }
 
 @keyframes bounce {
